@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: learn-gherkin
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/learn_gherking?currentSchema=learn
+    username: user
+    password: usermdp
+
+flyway:
+  schemas: learn
+  out-of-order: false
