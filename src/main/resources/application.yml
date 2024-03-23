@@ -3,10 +3,25 @@ spring:
     name: learn-gherkin
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/learn_gherking?currentSchema=learn
+    url: jdbc:postgresql://localhost:5432/learn_gherkin?currentSchema=learn
     username: user
-    password: usermdp
+    password: root
 
 flyway:
   schemas: learn
   out-of-order: false
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,shutdown,metrics
+  endpoint:
+    shutdown:
+      enabled: ${IS_ACTUATOR_SHUTDOWN:false}
+    health:
+      group:
+        custom:
+          showComponents: always
+          showDetails: always
